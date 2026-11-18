@@ -32,13 +32,13 @@
 | 分类 | 内容 |
 |---|---|
 | 语言 | Kotlin · Java · ArkTS / TypeScript · Python · SQL |
-| 移动端 | ArkUI 声明式开发 · Stage 模型生命周期 · 页面路由与状态管理 · MVVM · Retrofit / OkHttp · 四大组件 |
+| 移动端 | ArkUI 声明式开发 · Stage 模型生命周期 · 页面路由与状态管理 · MVVM · Compose 与 XML 两套 UI · Retrofit / OkHttp |
 | 服务端 | Spring Boot · MyBatis-Plus · MySQL · JWT · RESTful 接口设计 |
 | 测试与工具 | pytest · Git · DevEco Studio · Android Studio · IntelliJ IDEA |
 
 ## 当前在做
 
-- 把毕设那套后端接到 Android 端，验证同一份接口契约在两个客户端上的行为一致。
+- 安卓端已接上毕设后端，同一份接口契约在 HarmonyOS、Android、pytest 三处行为一致，登录与今日提醒两条主链路都跑通。
 - 补 Kotlin 协程与 ViewModel 的底层理解——目标不是会调 API，而是能讲清为什么这样用。
 
 ---
