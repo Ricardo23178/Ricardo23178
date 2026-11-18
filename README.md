@@ -14,8 +14,8 @@
 
 | 层 | 仓库 | 做了什么 |
 |---|---|---|
-| 客户端 | [medication-reminder-app](https://github.com/Ricardo23178/medication-reminder-app) | HarmonyOS ArkTS 客户端，16 个页面 / 30 个 .ets / 3606 行，含适老化交互与家属协同 |
-| 服务端 | [medication-reminder-backend](https://github.com/Ricardo23178/medication-reminder-backend) | Spring Boot 3.5 + MyBatis-Plus + MySQL + JWT，用药计划状态机、定时提醒、家属绑定 |
+| 客户端 | [medication-harmony](https://github.com/Ricardo23178/medication-harmony) | HarmonyOS ArkTS 客户端，16 个页面 / 30 个 .ets / 3606 行，含适老化交互与家属协同 |
+| 服务端 | [medication-backend](https://github.com/Ricardo23178/medication-backend) | Spring Boot 3.5 + MyBatis-Plus + MySQL + JWT，用药计划状态机、定时提醒、家属绑定 |
 | 测试 | [medication-api-tests](https://github.com/Ricardo23178/medication-api-tests) | pytest 接口测试，141 条用例 / 2244 行，覆盖鉴权、越权隔离、状态机、确认幂等 |
 
 写测试时挖出一个真实缺陷：用户点「稍后提醒」后，确认窗口被重算成 `now + 延迟 + 120s`，若原提醒时间仍在未来，新窗口反而比原来更短。已用 `xfail` 标记并保留复现路径，修法是取两者较大值。
