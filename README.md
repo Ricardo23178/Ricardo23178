@@ -10,11 +10,12 @@
 
 ## 一条能跑通的完整链路
 
-不是一个 demo 拆成三个仓，而是同一个系统（家属协同用药提醒）的三层，每层都能单独验证：
+不是一个 demo 拆成三个仓，而是同一个系统（家属协同用药提醒）的两个客户端、一个服务端、一套接口测试，每块都能单独跑起来验证：
 
 | 层 | 仓库 | 做了什么 |
 |---|---|---|
-| 客户端 | [medication-harmony](https://github.com/Ricardo23178/medication-harmony) | HarmonyOS ArkTS 客户端，16 个页面 / 30 个 .ets / 3606 行，含适老化交互与家属协同 |
+| 客户端 · 鸿蒙 | [medication-harmony](https://github.com/Ricardo23178/medication-harmony) | HarmonyOS ArkTS 客户端，16 个页面 / 30 个 .ets / 3606 行，含适老化交互与家属协同 |
+| 客户端 · Android | [medication-android](https://github.com/Ricardo23178/medication-android) | Kotlin + Compose 重做同一套业务，37 个文件 / 约 4100 行 / 32 个用例，验证规则确实只在服务端有 |
 | 服务端 | [medication-backend](https://github.com/Ricardo23178/medication-backend) | Spring Boot 3.5 + MyBatis-Plus + MySQL + JWT，用药计划状态机、定时提醒、家属绑定 |
 | 测试 | [medication-api-tests](https://github.com/Ricardo23178/medication-api-tests) | pytest 接口测试，141 条用例 / 2244 行，覆盖鉴权、越权隔离、状态机、确认幂等 |
 
@@ -24,6 +25,7 @@
 
 ## 独立模块
 
+- **[stilltick](https://github.com/Ricardo23178/stilltick)** — 静刻，纯本地专注计时器（Kotlin / Compose）。状态里不存剩余秒数、只存结束时间戳，界面每帧现算；到点的三个入口统一收敛，进程被杀也不丢时间。14 个源文件 / 1533 行 / 22 个用例。
 - **[video-analysis-module](https://github.com/Ricardo23178/video-analysis-module)** — 把视频转成模型可读的证据材料：FFprobe 元信息 + 均匀抽帧 + 字幕/Whisper 转写，输出带 schema 版本的 `analysis.json`，配契约测试保证字段不漂移。
 - **[scrap-return](https://github.com/Ricardo23178/scrap-return)** — Unity 2D 点击解谜原型，三关连续可玩（缺肢装配 / 伪装通行 / 气压联锁），3747 行 C#，场景由 Editor 脚本代码生成而非手工拖拽。
 
